@@ -4,6 +4,9 @@ import { Produto } from './produto/entities/produto.entity';
 import { ProdutoModule } from './produto/produto.module';
 import { CategoriaModule } from './categoria/categoria.module';
 import { Categoria } from './categoria/entities/categoria.entity';
+import { Usuario } from './usuario/entities/usuario.entity';
+import { UsuarioModule } from './usuario/usuario.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -14,11 +17,13 @@ import { Categoria } from './categoria/entities/categoria.entity';
       username: 'root',
       password: 'Lana5595',
       database: 'db_gamer_universe',
-      entities: [Produto, Categoria],
+      entities: [Produto, Categoria, Usuario],
       synchronize: true,
     }),
     ProdutoModule,
-    CategoriaModule
+    CategoriaModule,
+    UsuarioModule,
+    AuthModule
   ],
   controllers: [],
   providers: [],
